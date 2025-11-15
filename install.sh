@@ -66,4 +66,11 @@ if ! command -v docker >/dev/null 2>&1; then
 fi
 
 cd lenny
-sudo make tunnel configure rebuild preload 
+
+sudo make tunnel configure rebuild
+
+echo "[+] Starting preload step (with allocated TTY)..."
+sudo script -q -c "make preload" /dev/null
+
+
+echo "[✓] Lenny installation complete!"
