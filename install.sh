@@ -66,5 +66,4 @@ if ! command -v docker >/dev/null 2>&1; then
 fi
 
 cd lenny
-sudo make start 
-sudo make preload
+sudo make tunnel configure rebuild preload 
